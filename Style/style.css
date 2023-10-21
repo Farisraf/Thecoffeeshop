@@ -1,0 +1,566 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+/* Variabel CSS */
+:root {
+  --header-height: 3rem;
+  --font-medium: 500;
+}
+
+/* Warna */
+:root {
+  --first-color: #453322;
+  --second-color: #6f4d34;
+  --thrid-color: #00ff38;
+  --fourth-color: white;
+}
+
+/* Font Typography */
+:root {
+  --body-font: "Koulen", sans-serif;
+  --big-font-size: 6.25rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --big-font-size: 10.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --sma-font-size: 0.875rem;
+  }
+}
+
+/* MArgin */
+:root {
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+}
+
+/* Z-Index */
+:root {
+  --z-fixed: 100;
+}
+
+/* Base */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  background-color: var(--second-color);
+  color: var(--fourth-color);
+  line-height: 1.6;
+}
+h1,
+h2,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--fourth-color);
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Class CSS */
+.section {
+  padding: 3rem 0;
+}
+.section-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: rgb(255, 255, 255);
+  margin: var(--mb-4) 0;
+  text-align: center;
+  letter-spacing: 1.8px;
+}
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 120px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--thrid-color);
+}
+
+/* Layout */
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--first-color);
+}
+
+/* Navbar */
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: rgba(40, 16, 16, 0.3);
+    transition: 0.5s;
+    backdrop-filter: blur(50px);
+  }
+}
+.nav__item {
+  margin-bottom: var(--mb-4);
+}
+.nav__link {
+  position: relative;
+  color: var(--fourth-color);
+}
+.nav__link:hover {
+  color: var(--thrid-color);
+}
+.nav__logo {
+  font-size: 1.3rem;
+  color: var(--fourth-color);
+}
+.nav__title-color {
+  color: var(--thrid-color);
+}
+
+/* Show Menu */
+.show {
+  right: 0;
+}
+
+/* Menu Aktif */
+.active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--thrid-color);
+}
+
+/* Home */
+.home {
+  position: relative;
+  background-color: var(--first-color);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.home__container {
+  height: calc(100vh - var(--header-height));
+  row-gap: 5rem;
+}
+.home__tittle {
+  align-self: flex-start;
+  margin-top: 2rem;
+  font-size: 2.8rem;
+  line-height: 1.7;
+  letter-spacing: 4px;
+}
+.home__judul-warna-1 {
+  color: var(--thrid-color);
+}
+.home__judul-warna-2 {
+  color: var(--thrid-color);
+}
+.home__scroll {
+  align-self: flex-end;
+  padding-bottom: var(--mb-4);
+}
+.home__scroll-link {
+  font-size: 1.2rem;
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  color: white;
+}
+.home__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 295px;
+}
+
+/* About */
+.about__container {
+  justify-items: center;
+  row-gap: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about__text {
+  text-align: center;
+  margin-bottom: var(--mb-4);
+}
+.about__profession {
+  display: block;
+  margin-bottom: var(--mb-4);
+}
+.about__warna {
+  color: var(--thrid-color);
+}
+
+/* Coffee Menu */
+.container {
+  padding: 15px 9%;
+  padding-bottom: 100px;
+}
+.container .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 55px;
+}
+.container .box-container .box {
+  border-radius: 20px;
+  background: var(--first-color);
+  text-align: center;
+  padding: 30px 20px;
+}
+.container.box-container .box img {
+  height: 10px;
+}
+.container .box-container .box:hover {
+  box-shadow: 0 10px 15px rgba(40, 16, 16, 0.9);
+  transform: scale(1.05);
+}
+/* .container.box-container .box .btn{
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 25px;
+  border-radius: 5px;
+  padding: 8px 25px;
+} */
+.btn {
+  font-size: 3rem;
+}
+
+/* .category{
+  padding-left: 2rem;
+  align-items: center;
+  margin-top: -4rem;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 2rem;
+}
+.category .list-items{
+  width: 90%;
+  position: relative;
+  margin-top: 110px;
+}
+.category .list-items h3{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 70;
+}
+.category .list-items .card-list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.category .card-list .card{
+  width: 600px;
+  height: auto;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  background-color: var(--first-color);
+  outline: 2px solid var(--first-color);
+}
+/* .card{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+} */
+/* .category .card-list .card img{
+  width: 200px;
+  height: auto;
+  bottom: 170px;
+  left: 50px;
+  object-fit: cover;
+  object-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  border-radius: 50%;
+}
+.category .card-list .card .food-title{
+  padding: 40px 0 10px;
+}
+.price{
+  font-size: 2rem;
+}
+.nama__kopi{
+  color: var(--thrid-color);
+}
+.desc-coffee{
+  font-size: small;
+}
+.more__menu{
+  align-items: center;
+}
+.coffee__menu-button{
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+} */
+
+/* Dessert Menu */
+/* .category{
+  padding-left: 2rem;
+  align-items: center;
+  margin-top: -4rem;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 2rem;
+}
+.category .list-items{
+  width: 90%;
+  position: relative;
+  margin-top: 110px;
+}
+.category .list-items h3{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 70;
+}
+.category .list-items .card-list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.category .card-list .card{
+  width: 200px;
+  height: auto;
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  background-color: var(--first-color);
+  outline: 2px solid var(--first-color);
+}
+.category .card-list .card img{
+  width: 100px;
+  height: auto;
+  bottom: 170px;
+  left: 50px;
+  object-fit: cover;
+  object-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  border-radius: 50%;
+}
+.category .card-list .card .dessert-title{
+  padding: 40px 0 10px;
+}
+.price-dessert{
+  font-size: 2rem;
+}
+.dessert__warna{
+  color: var(--thrid-color);
+}
+.desc-dessert{
+  font-size: small;
+} */
+
+/* Testimoni */
+
+/* Comment */
+.comment__input {
+  color: white;
+  background-color: var(--first-color);
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid var(--first-color);
+  outline: none;
+  margin-bottom: 2rem;
+}
+.comment__button {
+  font-family: "Koulen", sans-serif;
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.65rem 2rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  border-radius: 0.7rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+.comment__button:hover {
+  box-shadow: rgba(51, 18, 18, 0.3);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--first-color);
+}
+.footer__container {
+  row-gap: 2rem;
+}
+.footer__title {
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: var(--mb-2);
+}
+.footer__warna {
+  color: var(--thrid-color);
+}
+.footer__text {
+  text-align: center;
+  letter-spacing: 2px;
+}
+.footer__social {
+  text-align: center;
+  font-size: 1rem;
+  margin-right: var(--mb-1);
+  padding-left: 2rem;
+}
+.nama__footer {
+  text-align: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 476px) {
+}
+
+/* @media screen and (min-width: 360px) {
+  .card-list{
+    align-items: center;
+    padding-left: 2rem;
+  }
+  .more__menu{
+    padding-top: 2.5rem;
+    padding-left: 7rem;
+  }
+  .footer__social{
+    padding-left: 2.8rem;
+  }
+} */
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding-top: 4rem;
+  }
+  .section-title {
+    margin-bottom: 3rem;
+  }
+  .section-title::after {
+    width: 64px;
+    top: 3rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1rem);
+  }
+  .nav__logo {
+    font-size: 2rem;
+    padding-left: 1.5rem;
+  }
+  .nav__list {
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item {
+    margin-left: var(--mb-4);
+    margin-bottom: 0;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__link {
+    font-size: 1.1rem;
+    color: white;
+  }
+  .nav__link:hover {
+    color: white;
+  }
+  .home__container {
+    height: 100vh;
+    grid-template-columns: 1.7fr 1fr;
+    row-gap: 0;
+  }
+  .home__tittle {
+    font-size: 5rem;
+    padding-top: 4rem;
+    padding-left: 1.8rem;
+  }
+  .home__img {
+    padding-top: 2rem;
+    width: 450px;
+    right: 3%;
+  }
+  .category {
+    display: inline-flex;
+  }
+  .comment__container {
+    padding-left: 20rem;
+  }
+  .footer__title {
+    padding-left: 20rem;
+  }
+  .footer__text {
+    padding-left: 20rem;
+  }
+  .nama__footer {
+    padding-left: 20rem;
+  }
+}
+
+@media (max-width: 768) {
+  .container {
+    padding: 20px;
+  }
+}
